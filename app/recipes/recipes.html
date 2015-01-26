@@ -1,5 +1,6 @@
 <ul>
     <li ng-repeat="recipe in recipes">{{ recipe.name }}
+        <img src="{{ recipe.photo }}" width="500">
         <ol>
             <li ng-repeat="ingredient in recipe.ingredients">{{ ingredient.name }}</li>
         </ol>

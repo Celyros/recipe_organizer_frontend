@@ -28,3 +28,11 @@
   content: "";
   padding: 0;
 }
+
+.navbar-default {
+    background-color: #3FADFF;
+}
+
+.add-recipe-page {
+    background-image: url("../img/linedpaper.png");
+}
