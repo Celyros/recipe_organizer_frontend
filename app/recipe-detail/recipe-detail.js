@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('myApp.recipeDetail', ['ngRoute'])
+angular.module('myApp.recipeDetail', ['ngRoute', 'myApp'])
 
 .config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/recipes/:recipeId', {
@@ -9,7 +9,7 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
   });
 }])
 
-.controller('RecipeDetailCtrl', ['$scope', 'Restangular', '$routeParams', function($scope, Restangular, $routeParams) {
+.controller('RecipeDetailCtrl', ['$scope', 'Restangular', '$routeParams', 'NumberService', function($scope, Restangular, $routeParams, NumberService) {
 
     $scope.recipeId = $routeParams.recipeId;
 
