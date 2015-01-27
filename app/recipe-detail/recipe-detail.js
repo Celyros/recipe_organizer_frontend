@@ -15,6 +15,16 @@ angular.module('myApp.recipeDetail', ['ngRoute'])
 
     Restangular.one('recipes', $scope.recipeId).customGET().then(function(data){
         $scope.recipe = data;
-    })
+    });
 
+    $scope.deleteRecipe = function() {
+        var confirmation = confirm('Are you sure you want to delete this recipe? This cannot be undone');
+
+        if (confirmation) {
+            Restangular.one('recipes', $scope.recipe.id).customDELETE.then(function() {
+                alert('The recipe was deleted!');
+                $location.path('/recipes')
+            })
+        }
+    }
 }]);
