@@ -15,4 +15,9 @@ angular.module('myApp', [
 
         RestangularProvider.setBaseUrl('http://localhost:8001')
 
-    }]);
+    }])
+
+    .service('NumberService', function() {
+        this.num = null;
+    });
+;
