@@ -1,17 +1,17 @@
 'use strict';
 
-angular.module('myApp.recipeDetail', ['ngRoute', 'myApp'])
+angular.module('myApp.recipeDetail', ['ngRoute'])
 
-    .config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/recipes/:recipeId', {
-            templateUrl: 'recipe-detail/recipe-detail.html',
-            controller: 'RecipeDetailCtrl'
-        });
-    }])
+.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/recipes/:recipeId', {
+    templateUrl: 'recipe-detail/recipe-detail.html',
+    controller: 'RecipeDetailCtrl'
+  });
+}])
 
-    .controller('RecipeDetailCtrl', ['$scope', 'Restangular', '$routeParams', 'NumberService', function ($scope, Restangular, $routeParams, NumberService) {
+.controller('RecipeDetailCtrl', ['$scope', 'Restangular', '$routeParams', function($scope, Restangular, $routeParams) {
 
-        $scope.recipeId = $routeParams.recipeId;
+    $scope.recipeId = $routeParams.recipeId;
 
         Restangular.one('recipes', $scope.recipeId).customGET().then(function (data) {
             $scope.recipe = data;
@@ -25,4 +25,14 @@ angular.module('myApp.recipeDetail', ['ngRoute', 'myApp'])
             NumberService.num = $scope.num;
         };
 
-    }]);
+        $scope.deleteRecipe = function() {
+        var confirmation = confirm('Are you sure you want to delete this recipe? This cannot be undone');
+
+        if (confirmation) {
+            Restangular.one('recipes', $scope.recipe.id).customDELETE.then(function() {
+                alert('The recipe was deleted!');
+                $location.path('/recipes')
+            })
+        }
+    }
+}]);
