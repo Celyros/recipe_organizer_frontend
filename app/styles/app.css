@@ -36,3 +36,15 @@
 .add-recipe-page {
     background-image: url("../img/linedpaper.png");
 }
+
+.recipe-card {
+    background-color: #ffffff  ;
+    border-radius: 5px;
+    padding: inherit;
+
+}
+
+body {
+
+    background-color: #004444
+}

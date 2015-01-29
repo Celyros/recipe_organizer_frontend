@@ -9,7 +9,7 @@ angular.module('myApp.recipeDetail', ['ngRoute', 'myApp'])
   });
 }])
 
-.controller('RecipeDetailCtrl', ['$scope', 'Restangular', '$routeParams', '$location', 'NumberService' function($scope, Restangular, $routeParams, $location, NumberService) {
+.controller('RecipeDetailCtrl', ['$scope', 'Restangular', '$routeParams', '$location', 'NumberService', function($scope, Restangular, $routeParams, $location, NumberService) {
 
     $scope.recipeId = $routeParams.recipeId;
 
