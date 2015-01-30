@@ -12,7 +12,10 @@ angular.module('myApp.home', ['ngRoute', 'myApp'])
         });
     }])
 
-    .controller('HomeCtrl', ['$scope', 'Restangular', 'NumberService', function ($scope, Restangular, NumberService) {
-
+    .controller('HomeCtrl', ['$scope', 'Restangular', 'NumberService','$location', '$anchorScroll', function ($scope, Restangular, NumberService, $location, $anchorScroll) {
+        $scope.scrollTo = function(id) {
+            $location.hash(id);
+            $anchorScroll();
+        }
 
     }]);

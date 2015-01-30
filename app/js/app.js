@@ -12,7 +12,7 @@ angular.module('myApp', [
     //'flow'
 ]).
     config(['$routeProvider', 'RestangularProvider', function ($routeProvider, RestangularProvider) {
-        $routeProvider.otherwise({redirectTo: '/recipes'});
+        $routeProvider.otherwise({redirectTo: '/home'});
 
         RestangularProvider.setBaseUrl('http://localhost:8001')
 

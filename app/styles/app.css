@@ -30,11 +30,11 @@
 }
 
 .navbar-default {
-    background-color: #3FADFF;
+    background-color: #FFFFFF;
 }
 
 .add-recipe-page {
-    background-image: url("../img/linedpaper.png");
+    background-image: url("../img/parchmentWrinkled.jpg");
 }
 
 .recipe-card {
@@ -46,5 +46,5 @@
 
 body {
 
-    background-color: #004444
+
 }
